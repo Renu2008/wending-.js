@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vending Machine</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<h1>Vending Machine</h1>
+<div class="product-list" id="productList">
+  <h3>Select Products</h3>
+  <div class="grid" id="productGrid"></div>
+  <button class="btn" onclick="calculatetotal()">Next</button>
+</div>
+
+<div class="summary hidden" id="summary">
+  <p><strong>Total:</strong> ₹<span id="totalCost">0</span></p>
+  <p>
+    Payment Method:
+    <select id="paymentMethod">
+      <option value="cash">Cash</option>
+      <option value="gpay">GPay</option>
+    </select>
+  </p>
+  <button class="btn" onclick="processPayment()">Pay Now</button>
+  <p id="paymentStatus"></p>
+</div>
+
+<div class="summary hidden" id="finalMessage">
+  <p class="success">Products dispatched successfully</p>
+  <p>Thank you for using our vending machine.</p>
+  <button class="btn" onclick="location.reload()">Exit</button>
+</div>
+
+<script src="index.js"></script>
+
+</body>
+</html>
+
+
+
+   
