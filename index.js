@@ -37,8 +37,6 @@ function calculatetotal() {
     alert("Please select at least one product.");
     return;
   }
-  
-
   const message = selectedItems.join("\n") + `\nTotal: ₹${total}`;
   alert(message);
   const method = prompt("Choose payment method: 'cash' or 'gpay'").toLowerCase();
@@ -57,7 +55,6 @@ function processcashpayment(total) {
     if (success) {
       alert("Payment successful!\nDispatching products");
       updateStock();
-     
       setTimeout(() => {
         alert("Products dispatched successfully.\nThank you for using our vending machine.");
         location.reload();
@@ -68,14 +65,12 @@ function processcashpayment(total) {
   }, 150);
 }
 function processgpaypayment(total) {
-  
   const userCode = prompt("Enter your GPay verification code:");
   const correctCode = "2008";
   if (userCode !== correctCode) {
     alert("Incorrect code. Payment cancelled.");
     return;
   }
-
   alert("Processing GPay payment");
   setTimeout(() => {
     const success = Math.random() > 0.1;
@@ -92,7 +87,6 @@ function processgpaypayment(total) {
     }
   }, 150);
 }
-
 function updateStock() {
   products.forEach(product => {
     const qty = parseInt(document.getElementById(`qty-${product.id}`).value) ;
